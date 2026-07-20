@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Profile</h1>
+    <p>Name: <span id="name"></span></p>
+    <p>Email: <span id="email"></span></p>
+
+    <a href="/home" class="btn btn-secondary">Go back to Home page</a>
+
+    <form action="/delete-account" method="POST" style="display: inline;">
+        <button type="submit" class="btn-danger">Delete the account</button>
+    </form>
+
+    <form action="/logout-account" method="POST" style="display: inline;">
+        <button type="submit">Log-out from the account</button>
+    </form>
+
+    <script src="/js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Edit Project</h1>
+        <p id="owner-label"></p>
+
+        <form id="editForm" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+        <hr>
+
+<h2>Attachments</h2>
+<form id="attachmentForm" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="attachmentFile">Upload a file (png, jpg, pdf, txt)</label>
+        <input type="file" id="attachmentFile" name="file" required>
+    </div>
+    <button type="submit" class="btn-secondary">Upload</button>
+</form>
+<p id="attachment-error" class="error-text"></p>
+<div id="attachment-list"></div>
+<hr>
+
+<h2>Threads</h2>
+<div id="thread-list"></div>
+
+<form id="newThreadForm" style="display: none;">
+    <div class="form-group">
+        <label for="threadTitle">New Thread Title</label>
+        <input type="text" id="threadTitle" name="title" required>
+    </div>
+    <button type="submit" class="btn-secondary">Create Thread</button>
+</form>
+<p id="thread-error" class="error-text"></p>
+        <hr>
+
+        <h2>Add a Member</h2>
+        <form id="addMemberForm">
+            <div class="form-group">
+                <label for="memberEmail">User's Email</label>
+                <input type="email" id="memberEmail" name="email" required>
+            </div>
+            <button type="submit" class="btn-secondary">Add Member</button>
+        </form>
+        <p id="member-error" class="error-text"></p>
+
+        <hr>
+
+        <h2>Members</h2>
+        <div id="member-list"></div>
+
+        <hr>
+
+        <form id="deleteForm" method="POST" style="display: none;">
+            <button type="submit" class="btn-danger">Delete Project</button>
+        </form>
+
+        <form id="leaveForm" method="POST" style="display: none;">
+            <button type="submit" class="btn-danger">Leave Project</button>
+        </form>
+
+        <a href="/projects" class="btn btn-secondary">Back to Projects</a>
+    </div>
+
+    <script src="/js/project-show.js"></script>
+</body>
+
+</html>

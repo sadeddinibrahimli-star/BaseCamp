@@ -1,0 +1,21 @@
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // stop the browser's normal full-page submission
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const response = await fetch('/sign-in', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        document.getElementById('error-message').textContent = data.error;
+        return;
+    }
+
+    window.location.href = '/home'; // success — navigate ourselves
+});
