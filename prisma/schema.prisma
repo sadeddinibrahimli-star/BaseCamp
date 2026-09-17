@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  is_admin Int     @default(0)
+
+  @@map("users")
+}
+
+model Project {
+  id          Int             @id @default(autoincrement())
+  name        String
+  description String
+  owner_email String
+  members     ProjectMember[]
+  attachments Attachment[]
+  threads     Thread[]
+
+  @@map("projects")
+}
+
+model ProjectMember {
+  project_id Int
+  user_email String
+  project    Project @relation(fields: [project_id], references: [id])
+
+  @@unique([project_id, user_email])
+  @@map("project_members")
+}
+model Attachment {
+  id         Int      @id @default(autoincrement())
+  filename   String
+  format     String
+  project_id Int
+  uploaded_by String
+  project    Project  @relation(fields: [project_id], references: [id])
+
+  @@map("attachments")
+}
+
+model Thread {
+  id         Int       @id @default(autoincrement())
+  title      String
+  project_id Int
+  created_by String
+  project    Project   @relation(fields: [project_id], references: [id])
+  messages   Message[]
+
+  @@map("threads")
+}
+
+model Message {
+  id         Int      @id @default(autoincrement())
+  content    String
+  thread_id  Int
+  author     String
+  thread     Thread   @relation(fields: [thread_id], references: [id])
+
+  @@map("messages")
+}
