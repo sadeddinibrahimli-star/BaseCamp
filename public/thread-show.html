@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thread</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="page-header">
+            <h1 id="thread-title"></h1>
+        </div>
+
+        <form id="editThreadForm" style="display: none;">
+            <div class="form-group">
+                <input type="text" id="editThreadTitle" name="title">
+            </div>
+            <button type="submit" class="btn-secondary">Save Title</button>
+        </form>
+        <p id="thread-edit-error" class="error-text"></p>
+
+        <hr>
+
+        <div id="message-list"></div>
+
+        <hr>
+
+        <form id="messageForm">
+            <div class="form-group">
+                <label for="content">Message</label>
+                <input type="text" id="content" name="content" required>
+            </div>
+            <button type="submit">Post</button>
+        </form>
+        <p id="message-error" class="error-text"></p>
+
+        <a href="/projects" class="btn btn-secondary">Back to Projects</a>
+    </div>
+
+    <script src="/js/thread-show.js"></script>
+</body>
+</html>

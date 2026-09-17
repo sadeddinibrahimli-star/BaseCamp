@@ -1,0 +1,122 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 0 20px;
+    background-color: #ffffff;
+    color: #222;
+}
+
+h1, h2 {
+    color: #222;
+    margin-bottom: 16px;
+}
+
+/* Card wrapper used on sign-in, sign-up, and project cards */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+.error-text {
+    color: #c0392b;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* Buttons AND links styled to look like buttons */
+button,
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2e7d32; /* green */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #24632a;
+}
+
+/* Secondary style for less prominent actions (delete, back links) */
+.btn-secondary {
+    background-color: #2563eb; /* blue */
+}
+
+.btn-secondary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-danger {
+    background-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #a93226;
+}
+
+.helper-text {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.helper-text a {
+    color: #2563eb;
+    font-weight: 500;
+}
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-close:hover {
+    background-color: #ddd;
+}
